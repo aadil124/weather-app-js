@@ -37,6 +37,7 @@ const getData = async () => {
     </div>
     </div>
   `;
+      document.querySelector("#searchTxt").value = "";
     } catch (error) {
       console.log(error);
     }
