@@ -11,15 +11,24 @@ const getData = async () => {
     try {
       let response = await fetch(weatherUrl);
       data = await response.json();
-      const cityName = data.name;
-      const minTemp = data.main.temp_min;
-      const maxTemp = data.main.temp_max;
-      const humidity = data.main.humidity;
-      const windSpeed = data.wind.speed;
-      const lat = data.coord.lat;
-      const lon = data.coord.lon;
-      const showResult = document.querySelector(".result");
-      showResult.innerHTML = `
+      displayResult(data);
+      document.querySelector("#searchTxt").value = "";
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};
+
+const displayResult = (data) => {
+  const cityName = data.name;
+  const minTemp = data.main.temp_min;
+  const maxTemp = data.main.temp_max;
+  const humidity = data.main.humidity;
+  const windSpeed = data.wind.speed;
+  const lat = data.coord.lat;
+  const lon = data.coord.lon;
+  const showResult = document.querySelector(".result");
+  showResult.innerHTML = `
     <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
     <div class="card-header text-center"><h1>${cityName}</h1></div>
     <div class="card-body">
@@ -37,11 +46,6 @@ const getData = async () => {
     </div>
     </div>
   `;
-      document.querySelector("#searchTxt").value = "";
-    } catch (error) {
-      console.log(error);
-    }
-  }
 };
 
 btn.addEventListener("click", getData);
