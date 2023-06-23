@@ -15,18 +15,15 @@
         <div class="heading">
             <h1 class="text-center bg-danger text-white p-3">Weather App</h1>
         </div>
-        <div class="text-center mt-3 text-center">
-            <!-- <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField" placeholder="Enter City Name Here..."/>
-            <Button id="btn_weather" class="btn btn-outline-danger m-3">Get Weather</Button> -->
-
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" id="searchTxt" placeholder="Recipient's username"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" id="btn_weather" type="button">Button</button>
+        <div class="text-center">
+            <div class="input col-md-6">
+                <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField form-control" required
+                    placeholder="Enter City Name Here..." />
+                <Button id="btn_weather" class="btn btn-outline-danger m-3">Get Weather</Button>
             </div>
         </div>
         <div class="result">
-            <p class="showresult"></p>
+
         </div>
 
     </section>
